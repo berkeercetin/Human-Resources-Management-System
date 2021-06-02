@@ -59,5 +59,6 @@ public class UsersController {
 		ErrorDataResult<Object> errors = new ErrorDataResult<Object>(validationErrors,"Dogrulama hatalari : ");
 		return errors;
 	}
+	//git deneme
 
 }
