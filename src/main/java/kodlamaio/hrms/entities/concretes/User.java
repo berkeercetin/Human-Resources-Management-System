@@ -41,5 +41,10 @@ public class User {
 	@NotNull
 	@Column(name="password")
 	private String password;
+	
+	@NotBlank
+	@NotNull
+	@Column(name="password_repeat")
+	private String passwordRepeat;
 
 }

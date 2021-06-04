@@ -11,6 +11,8 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -23,6 +25,7 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper=false)
 @AllArgsConstructor
 @NoArgsConstructor
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","job_advertisement"})
 public class Employer extends User{
 	
 	@NotBlank
@@ -40,17 +43,17 @@ public class Employer extends User{
 	@Column(name = "company_name")
 	private String companyName;
 	
-	@NotBlank
-	@NotNull
-	@Email
-	@Column(name="email_employers")
-	private String company_email;
+//	@NotBlank
+//	@NotNull
+//	@Email
+//	@Column(name="email_employers")
+//	private String company_email;
 	
 	@Column(name="is_verified")
 	private boolean isVerified;
 	
 	@OneToMany(mappedBy="employer")
-	private List<Employer> employer;
+	private List<JobAdvertisement> jobAdvertisements;
 	
 	
 }

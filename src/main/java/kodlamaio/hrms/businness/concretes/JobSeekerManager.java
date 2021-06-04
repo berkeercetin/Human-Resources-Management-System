@@ -38,21 +38,8 @@ public class JobSeekerManager implements JobSeekerService{
 		// TODO Auto-generated method stub
 		this.mernisAuthService.validateMernis(jobSeeker);
 		
-		if (jobSeeker.getFirstName().isEmpty()) {
-			return new ErrorResult("Ad bos birakilamaz");
-
-		}
-		else if (jobSeeker.getLastName().isEmpty()) {
-			return new ErrorResult("soyAd bos birakilamaz");
-		}
-		else if (jobSeeker.getPassword().isEmpty()) {
-			return new ErrorResult("sifre bos birakilamaz");
-		}
-		else if (jobSeeker.getEmail().isEmpty()) {
-			return new ErrorResult("eposta bos birakilamaz");
-
-		}
-		else if (jobSeeker.getNationalityId().isEmpty()) {
+		
+		 if (jobSeeker.getNationalityId().isEmpty()) {
 			return new ErrorResult("tc no bos birakilamaz");
 		}
 		else if (!this.jobSeekerDao.findByEmail(jobSeeker.getEmail()).isEmpty()){

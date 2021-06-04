@@ -37,16 +37,19 @@ public class EmployerManager implements EmployerService {
 		// TODO Auto-generated method stub
 		this.verify.AuthWithHMRS(employer);
 		
- if(employer.isVerified() ) {
-	return new ErrorResult("Dogrulanmadi");
-	}
-		else if (employer.getPassword().isEmpty()) {
+		
+		if (employer.getPassword().isEmpty()) {
 			return new ErrorResult("Sifre zorunludur");
 		}
 		else if (!this.employerDao.getByEmail(employer.getEmail()).isEmpty()) {
 			return new ErrorResult ("e posta daha once kayitli");
 		}
 		
+		else if(!employer.isVerified() ) {
+			return new ErrorResult("Dogrulanmadi");
+			}
+		else if (!(employer.getEmail()==employer.getWebsite()))
+				return new ErrorResult("Dogrulanmadi");
 		else {
 			this.employerDao.save(employer);
 			return new SuccessResult("isveren eklendi");

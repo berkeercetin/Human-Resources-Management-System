@@ -12,6 +12,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,6 +23,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name="job_seeker_github_adresses")
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","curriculum_vitaes"})
+
 public class JobSeekerGithubAdress {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
