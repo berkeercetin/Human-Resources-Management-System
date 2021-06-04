@@ -36,22 +36,10 @@ public class EmployerManager implements EmployerService {
 	public Result add(Employer employer) {
 		// TODO Auto-generated method stub
 		this.verify.AuthWithHMRS(employer);
-		if (employer.getCompanyName().isEmpty()) {
-			return new ErrorResult("Sirket adi zorunludur");
-		}
-		else if (employer.getWebsite().isEmpty()) {
-			return new ErrorResult("Sirket sitesi zorunludur");
-		}
-		else if (employer.getCompany_email().isEmpty()) {
-			return new ErrorResult("Sirket emaili zorunludur");
-		}
-		else if (employer.getPhone().isEmpty()) {
-			return new ErrorResult("Sirket telefonu zorunludur");
-			
-		}
-//		else if(employer.isVerified() ) {
-//			return new ErrorResult("Dogrulanmadi");
-//		}
+		
+ if(employer.isVerified() ) {
+	return new ErrorResult("Dogrulanmadi");
+	}
 		else if (employer.getPassword().isEmpty()) {
 			return new ErrorResult("Sifre zorunludur");
 		}
