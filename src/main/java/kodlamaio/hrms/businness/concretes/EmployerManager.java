@@ -48,8 +48,7 @@ public class EmployerManager implements EmployerService {
 		else if(!employer.isVerified() ) {
 			return new ErrorResult("Dogrulanmadi");
 			}
-		else if (!(employer.getEmail()==employer.getWebsite()))
-				return new ErrorResult("Dogrulanmadi");
+		
 		else {
 			this.employerDao.save(employer);
 			return new SuccessResult("isveren eklendi");

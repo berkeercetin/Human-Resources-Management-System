@@ -39,7 +39,7 @@ public class JobManager implements JobService{
 	@Override
 	public Result add(Job job) {
 		// TODO Auto-generated method stub
-		if(this.jobDao.getByTitle(job.getTitle()).isEmpty()) {
+		if(!this.jobDao.getByTitle(job.getTitle()).isEmpty()) {
 			return new ErrorResult("is pozisyonu ekli");
 		}
 		else {
