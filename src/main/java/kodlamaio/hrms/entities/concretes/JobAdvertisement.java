@@ -11,6 +11,8 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,11 +22,13 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+
 public class JobAdvertisement {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="job_advertisement_id")
+	private int id;
 	
-
 	@NotBlank
 	@NotNull
 	@Column(name="job_description")
@@ -62,9 +66,11 @@ public class JobAdvertisement {
 	@JoinColumn(name="city_id")
 	private City city;
 	
+
 	@ManyToOne()
 	@JoinColumn(name="id")
 	private Employer employer;
+	
 	
 	
 

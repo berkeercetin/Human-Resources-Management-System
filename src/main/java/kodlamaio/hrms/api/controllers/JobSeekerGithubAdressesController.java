@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,7 +29,7 @@ public class JobSeekerGithubAdressesController {
 	}
 	
 	@PostMapping("/add")
-	public Result add(JobSeekerGithubAdress jobSeekerGithubAdress) {
+	public Result add(@RequestBody JobSeekerGithubAdress jobSeekerGithubAdress) {
 		return this.jobSeekerGithubAdressService.add(jobSeekerGithubAdress);
 	}
 	@GetMapping("/getall")

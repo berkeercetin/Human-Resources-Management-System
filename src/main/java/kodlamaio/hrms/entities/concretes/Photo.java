@@ -24,7 +24,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 @Table(name="photos")
-@JsonIgnoreProperties({"hibernateLazyInitializer","handler","curriculum_vitaes"})
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","jobSeeker"})
 
 public class Photo {
 	
