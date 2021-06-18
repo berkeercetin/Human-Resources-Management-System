@@ -24,7 +24,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 @Table(name="photos")
-@JsonIgnoreProperties({"hibernateLazyInitializer","handler","jobSeeker"})
 
 public class Photo {
 	
@@ -54,8 +53,8 @@ public Photo(String url, String photoName, String imageCloudinaryId) {
 //	private JobSeeker jobSeeker;
 	
 	
-	
-	@OneToMany(mappedBy="photo")
-	private List<JobSeeker> jobSeeker;
+//	
+//	@OneToMany(mappedBy="photo")
+//	private List<JobSeeker> jobSeeker;
 	
 }

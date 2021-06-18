@@ -40,7 +40,7 @@ public class Job {
 	private int jobAdvertisementId;
 	
 	@OneToMany(mappedBy="job")
-	private List <JobAdvertisement> JobAdvertisements;
+	private List <JobAdvertisement> jobAdvertisements;
 	
 	
 

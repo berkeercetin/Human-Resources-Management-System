@@ -60,7 +60,7 @@ public class JobSeeker extends User {
 	@JoinColumn(name="cv_id")
 	private CurriculumVitae curriculumVitae;
 	
-	@ManyToOne()
-	@JoinColumn(name="photo_id")
-	private Photo photo;
+//	@ManyToOne()
+//	@JoinColumn(name="photo_id")
+//	private Photo photo;
 }

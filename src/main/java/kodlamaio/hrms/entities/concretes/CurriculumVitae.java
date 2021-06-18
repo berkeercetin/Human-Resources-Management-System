@@ -14,6 +14,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -24,6 +26,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name="curriculum_vitaes")
 
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","jobSeeker"})
 
 public class CurriculumVitae {
 	@Id
