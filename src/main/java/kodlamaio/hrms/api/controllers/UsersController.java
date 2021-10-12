@@ -23,8 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 import kodlamaio.hrms.businness.abstracts.UserService;
 import kodlamaio.hrms.core.utilities.results.DataResult;
 import kodlamaio.hrms.core.utilities.results.ErrorDataResult;
-import kodlamaio.hrms.core.utilities.results.Result;
-import kodlamaio.hrms.entities.concretes.Job;
+
 import kodlamaio.hrms.entities.concretes.User;
 @RestController
 @RequestMapping("api/users")
